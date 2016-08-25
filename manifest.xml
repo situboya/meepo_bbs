@@ -34,7 +34,28 @@
 		</menu>
 	</bindings>
 	<install><![CDATA[
-	CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_adv` (
+	/*
+Navicat MySQL Data Transfer
+
+Source Server         : 本地
+Source Server Version : 50128
+Source Host           : localhost:3306
+Source Database       : we77
+
+Target Server Type    : MYSQL
+Target Server Version : 50128
+File Encoding         : 65001
+
+Date: 2016-08-25 11:33:58
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_adv
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_adv`;
+CREATE TABLE `ims_meepo_bbs_adv` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uniacid` int(11) DEFAULT '0',
   `advname` varchar(50) DEFAULT '',
@@ -48,15 +69,19 @@
   KEY `indx_enabled` (`enabled`),
   KEY `indx_displayorder` (`displayorder`),
   KEY `uniacid` (`uniacid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_adv
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_adv` VALUES ('33', '1', '首页轮播', '', 'images/1/2016/08/uEQOwE7eWoYoeoQ7bEoHA47L4a74Lo.jpg', '0', '1', '0');
+INSERT INTO `ims_meepo_bbs_adv` VALUES ('34', '1', '首页轮播1', '', 'images/1/2016/08/R2R2b6mt7E9A26t9iL3c879b4LLab9.jpg', '1', '1', '0');
 
---
--- 表的结构 `ims_meepo_bbs_api`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_api` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_api
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_api`;
+CREATE TABLE `ims_meepo_bbs_api` (
   `id` int(11) NOT NULL,
   `title` varchar(32) NOT NULL DEFAULT '',
   `description` varchar(132) NOT NULL DEFAULT '',
@@ -64,13 +89,15 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_api` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_api
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_begging`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_begging` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_begging
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_begging`;
+CREATE TABLE `ims_meepo_bbs_begging` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `tid` varchar(64) NOT NULL DEFAULT '',
   `fid` int(11) unsigned NOT NULL DEFAULT '0',
@@ -86,28 +113,32 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_begging` (
   `thumb` text NOT NULL,
   `ttid` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_begging
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_blacklist`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_blacklist` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_blacklist
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_blacklist`;
+CREATE TABLE `ims_meepo_bbs_blacklist` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) unsigned NOT NULL DEFAULT '0',
   `time` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_blacklist
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_credit_goods`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_credit_goods` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_credit_goods
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_credit_goods`;
+CREATE TABLE `ims_meepo_bbs_credit_goods` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `uniacid` int(10) unsigned NOT NULL,
   `title` varchar(50) NOT NULL,
@@ -121,15 +152,17 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_credit_goods` (
   `content` text NOT NULL,
   `createtime` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_credit_goods
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_credit_request`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_credit_request` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_credit_request
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_credit_request`;
+CREATE TABLE `ims_meepo_bbs_credit_request` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `uniacid` int(10) unsigned NOT NULL,
   `uid` int(10) unsigned NOT NULL,
@@ -142,15 +175,17 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_credit_request` (
   `createtime` int(10) unsigned NOT NULL DEFAULT '0',
   `status` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_credit_request
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_ec_chong_log`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_ec_chong_log` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_ec_chong_log
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_ec_chong_log`;
+CREATE TABLE `ims_meepo_bbs_ec_chong_log` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `tid` varchar(50) NOT NULL DEFAULT '',
   `type` varchar(32) NOT NULL DEFAULT '',
@@ -162,15 +197,18 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_ec_chong_log` (
   `status` tinyint(2) unsigned NOT NULL DEFAULT '0',
   `transid` varchar(64) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_ec_chong_log
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_ec_chong_log` VALUES ('4', '2016082411165821670482', 'credit2', '10', '1472008609', '1', '1', '10', '0', '');
 
---
--- 表的结构 `ims_meepo_bbs_home_message`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_home_message` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_home_message
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_home_message`;
+CREATE TABLE `ims_meepo_bbs_home_message` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `fromopenid` varchar(50) NOT NULL DEFAULT '',
   `toopenid` varchar(50) NOT NULL DEFAULT '',
@@ -183,15 +221,27 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_home_message` (
   KEY `fromopenid` (`fromopenid`) USING BTREE,
   KEY `toopenid` (`toopenid`) USING BTREE,
   KEY `tid` (`tid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14111 ;
+) ENGINE=MyISAM AUTO_INCREMENT=14121 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_home_message
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_home_message` VALUES ('14111', '1', '1', '发布帖子新鲜事奖励积分', '0', '1472017424', '0', '918');
+INSERT INTO `ims_meepo_bbs_home_message` VALUES ('14112', '1', '1', '帖子新鲜事被阅读励积分', '0', '1472017432', '0', '918');
+INSERT INTO `ims_meepo_bbs_home_message` VALUES ('14113', '1', '1', '阅读帖子奖励积分', '0', '1472017432', '0', '918');
+INSERT INTO `ims_meepo_bbs_home_message` VALUES ('14114', '1', '1', '阅读帖子奖励积分', '0', '1472020093', '0', '917');
+INSERT INTO `ims_meepo_bbs_home_message` VALUES ('14115', '1', '0', '点赞了您的帖子柳州日报', '1', '1472020096', '0', '917');
+INSERT INTO `ims_meepo_bbs_home_message` VALUES ('14116', '1', '1', '点赞帖子奖励积分', '0', '1472020096', '0', '917');
+INSERT INTO `ims_meepo_bbs_home_message` VALUES ('14117', '1', '1', '发布帖子大爆料奖励积分', '0', '1472030066', '0', '919');
+INSERT INTO `ims_meepo_bbs_home_message` VALUES ('14118', '1', '1', '发布帖子淡定奖励积分', '0', '1472030163', '0', '920');
+INSERT INTO `ims_meepo_bbs_home_message` VALUES ('14119', '1', '1', '帖子淡定被阅读励积分', '0', '1472030171', '0', '920');
+INSERT INTO `ims_meepo_bbs_home_message` VALUES ('14120', '1', '1', '阅读帖子奖励积分', '0', '1472030171', '0', '920');
 
---
--- 表的结构 `ims_meepo_bbs_log`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_log` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_log
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_log`;
+CREATE TABLE `ims_meepo_bbs_log` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `openid` varchar(42) NOT NULL DEFAULT '',
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
@@ -200,15 +250,17 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_log` (
   `log` text NOT NULL,
   `type` varchar(32) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_log
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_msg_template`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_msg_template` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_msg_template
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_msg_template`;
+CREATE TABLE `ims_meepo_bbs_msg_template` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uniacid` int(11) NOT NULL,
   `title` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT '模板标题',
@@ -218,30 +270,34 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_msg_template` (
   `set` text NOT NULL,
   `type` varchar(32) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_msg_template
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_msg_template_data`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_msg_template_data` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_msg_template_data
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_msg_template_data`;
+CREATE TABLE `ims_meepo_bbs_msg_template_data` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(52) NOT NULL DEFAULT '',
   `set` text NOT NULL,
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
   `tpl_id` varchar(124) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_msg_template_data
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_navs`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_navs` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_navs
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_navs`;
+CREATE TABLE `ims_meepo_bbs_navs` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
   `icon` varchar(132) NOT NULL DEFAULT '',
@@ -251,15 +307,21 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_navs` (
   `displayorder` int(11) unsigned NOT NULL DEFAULT '0',
   `enabled` tinyint(2) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_navs
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_navs` VALUES ('42', '1', 'http://127.0.0.1//addons/meepo_bbs/template/mobile/default/img/2.png', '积分兑换', './index.php?i=1&c=entry&do=activity_coupon&m=meepo_bbs', '1472027996', '3', '1');
+INSERT INTO `ims_meepo_bbs_navs` VALUES ('41', '1', 'http://127.0.0.1//addons/meepo_bbs/template/mobile/default/img/avatar.png', '个人中心', './index.php?i=1&c=entry&do=home&m=meepo_bbs', '1472027996', '4', '1');
+INSERT INTO `ims_meepo_bbs_navs` VALUES ('43', '1', 'http://127.0.0.1//addons/meepo_bbs/template/mobile/default/img/13.png', '任务大厅', './index.php?i=1&c=entry&do=task&m=meepo_bbs', '1472027996', '2', '1');
+INSERT INTO `ims_meepo_bbs_navs` VALUES ('40', '1', 'http://127.0.0.1//addons/meepo_bbs/template/mobile/default/img/home.png', '首页', './index.php?i=1&c=entry&do=forum&m=meepo_bbs', '1472027996', '5', '1');
 
---
--- 表的结构 `ims_meepo_bbs_o2o_user`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_o2o_user` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_o2o_user
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_o2o_user`;
+CREATE TABLE `ims_meepo_bbs_o2o_user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) unsigned NOT NULL DEFAULT '0',
   `shopid` int(11) unsigned NOT NULL DEFAULT '0',
@@ -270,15 +332,18 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_o2o_user` (
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
   `acid` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_o2o_user
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_o2o_user` VALUES ('3', '1', '0', '1', '2', '', '1472008323', '1', '1');
 
---
--- 表的结构 `ims_meepo_bbs_o2o_user_log`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_o2o_user_log` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_o2o_user_log
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_o2o_user_log`;
+CREATE TABLE `ims_meepo_bbs_o2o_user_log` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) unsigned NOT NULL DEFAULT '0',
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
@@ -286,15 +351,17 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_o2o_user_log` (
   `time` int(11) unsigned NOT NULL DEFAULT '0',
   `cid` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_o2o_user_log
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_reply_ups`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_reply_ups` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_reply_ups
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_reply_ups`;
+CREATE TABLE `ims_meepo_bbs_reply_ups` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `rid` int(11) unsigned NOT NULL DEFAULT '0',
   `uid` int(11) unsigned NOT NULL DEFAULT '0',
@@ -304,15 +371,17 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_reply_ups` (
   KEY `rid` (`rid`) USING BTREE,
   KEY `uid` (`uid`) USING BTREE,
   KEY `uniacid` (`uniacid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_reply_ups
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_rss`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_rss` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_rss
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_rss`;
+CREATE TABLE `ims_meepo_bbs_rss` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
   `title` varchar(32) NOT NULL DEFAULT '',
@@ -320,45 +389,52 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_rss` (
   `status` tinyint(2) unsigned NOT NULL DEFAULT '0',
   `fid` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_rss
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_set`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_set` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_set
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_set`;
+CREATE TABLE `ims_meepo_bbs_set` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
   `set` text,
   `createtime` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `uniacid` (`uniacid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_set
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_set` VALUES ('37', '1', 'a:32:{s:1:\"c\";s:4:\"site\";s:1:\"a\";s:5:\"entry\";s:2:\"do\";s:3:\"set\";s:1:\"m\";s:9:\"meepo_bbs\";s:9:\"mainColor\";s:7:\"#666666\";s:5:\"title\";s:9:\"柳州圈\";s:3:\"tab\";s:0:\"\";s:4:\"desc\";s:21:\"随手尽知柳州事\";s:5:\"appid\";s:0:\"\";s:9:\"sppsecret\";s:0:\"\";s:12:\"subscribeurl\";s:0:\"\";s:4:\"logo\";s:51:\"images/1/2016/08/x8HDwLHfFjDbFL21Fa8HFAhV9fhvr1.jpg\";s:2:\"bg\";s:0:\"\";s:6:\"mingan\";s:0:\"\";s:7:\"content\";s:0:\"\";s:6:\"sysuid\";s:1:\"1\";s:9:\"post_time\";s:0:\"\";s:10:\"reply_time\";s:0:\"\";s:10:\"member_num\";s:0:\"\";s:9:\"topic_num\";s:0:\"\";s:7:\"isshare\";s:1:\"0\";s:6:\"wechat\";s:0:\"\";s:6:\"issend\";s:1:\"0\";s:3:\"tel\";s:0:\"\";s:6:\"submit\";s:6:\"提交\";s:5:\"token\";s:8:\"a0ac9399\";s:9:\"__session\";s:108:\"eyJ1aWQiOiIxIiwibGFzdHZpc2l0IjoiMCIsImxhc3RpcCI6IiIsImhhc2giOiI4N2I5YzY4MDZjODQyMzk5NTcyYzVkOTYwNDc3MDExNSJ9\";s:9:\"__uniacid\";s:1:\"1\";s:5:\"__uid\";s:1:\"1\";s:7:\"__entry\";N;s:7:\"__state\";N;s:13:\"manager_group\";a:1:{i:0;s:1:\"1\";}}', '1472030187');
 
---
--- 表的结构 `ims_meepo_bbs_share`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_share` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_share
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_share`;
+CREATE TABLE `ims_meepo_bbs_share` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
   `set` text NOT NULL,
   `createtime` int(11) unsigned NOT NULL DEFAULT '0',
   `tid` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_share
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_task`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_task` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_task
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_task`;
+CREATE TABLE `ims_meepo_bbs_task` (
   `taskid` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `uniacid` int(11) unsigned NOT NULL,
   `available` tinyint(1) NOT NULL DEFAULT '0',
@@ -376,15 +452,23 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_task` (
   `displayorder` smallint(6) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`taskid`),
   KEY `displayorder` (`displayorder`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_task
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_task` VALUES ('42', '1', '1', '首次点赞', '首次点赞，奖励积分', '1', '1000', 'http://127.0.0.1//addons/meepo_bbs/icon.jpg', 'first_like.task.php', '1472020012', '1473229612', '0', '', '10', '0');
+INSERT INTO `ims_meepo_bbs_task` VALUES ('43', '1', '1', '邀请好友', '邀请好友，奖励积分', '0', '1000', 'http://127.0.0.1//addons/meepo_bbs/icon.jpg', 'friend.task.php', '1472020012', '1473229612', '0', '', '10', '1');
+INSERT INTO `ims_meepo_bbs_task` VALUES ('44', '1', '1', '首次转发', '首次看帖，奖励积分', '0', '1000', 'http://127.0.0.1//addons/meepo_bbs/icon.jpg', 'first_share.task.php', '1472020012', '1473229612', '0', '', '10', '2');
+INSERT INTO `ims_meepo_bbs_task` VALUES ('45', '1', '1', '首次看帖', '首次转发，奖励积分', '0', '1000', 'http://127.0.0.1//addons/meepo_bbs/icon.jpg', 'first_read.task.php', '1472020012', '1473229612', '0', '', '10', '3');
+INSERT INTO `ims_meepo_bbs_task` VALUES ('46', '1', '1', '完善个人信息', '完善个人信息，奖励积分', '0', '1000', 'http://127.0.0.1//addons/meepo_bbs/icon.jpg', 'update_user.task.php', '1472020012', '1473229612', '0', '', '10', '4');
+INSERT INTO `ims_meepo_bbs_task` VALUES ('47', '1', '1', '首次发帖', '首次发帖，奖励积分！', '0', '1000', 'http://127.0.0.1//addons/meepo_bbs/icon.jpg', 'first_post.task.php', '1472020012', '1473229612', '0', '', '10', '5');
 
---
--- 表的结构 `ims_meepo_bbs_task_user`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_task_user` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_task_user
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_task_user`;
+CREATE TABLE `ims_meepo_bbs_task_user` (
   `uid` mediumint(8) unsigned NOT NULL,
   `username` char(15) NOT NULL DEFAULT '',
   `taskid` smallint(6) unsigned NOT NULL DEFAULT '0',
@@ -395,13 +479,16 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_task_user` (
   KEY `isignore` (`isignore`,`dateline`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_task_user
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_task_user` VALUES ('1', '', '42', '10', '1472020106', '0');
 
---
--- 表的结构 `ims_meepo_bbs_threadclass`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_threadclass` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_threadclass
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_threadclass`;
+CREATE TABLE `ims_meepo_bbs_threadclass` (
   `typeid` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `fid` int(11) unsigned NOT NULL DEFAULT '0',
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
@@ -417,15 +504,24 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_threadclass` (
   PRIMARY KEY (`typeid`),
   KEY `uniacid` (`uniacid`) USING BTREE,
   KEY `fid` (`fid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=288 ;
+) ENGINE=MyISAM AUTO_INCREMENT=295 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_threadclass
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_threadclass` VALUES ('288', '0', '1', '柳州城事', '0', 'images/1/2016/08/Y9B2W6Vkd9wJ25j44F5SF9WF2smjTF.png', '0', '', null, 'N;', 'N;', '1');
+INSERT INTO `ims_meepo_bbs_threadclass` VALUES ('289', '0', '1', '吐槽灌水', '0', '', '0', '', null, 'N;', 'N;', '0');
+INSERT INTO `ims_meepo_bbs_threadclass` VALUES ('290', '0', '1', '吃遍柳州', '0', 'images/1/2016/08/THp133r7361EKkN1hJI1oerO3131iN.png', '0', '', null, 'N;', 'N;', '1');
+INSERT INTO `ims_meepo_bbs_threadclass` VALUES ('291', '0', '1', '男女交友', '0', '', '0', '', null, 'N;', 'N;', '0');
+INSERT INTO `ims_meepo_bbs_threadclass` VALUES ('292', '0', '1', '车友交流', '0', '', '0', '', null, 'N;', 'N;', '0');
+INSERT INTO `ims_meepo_bbs_threadclass` VALUES ('293', '0', '1', '四大才纸', '0', '', '0', '', null, 'N;', 'N;', '0');
+INSERT INTO `ims_meepo_bbs_threadclass` VALUES ('294', '0', '1', '小铺在线', '0', '', '0', '', null, 'N;', 'N;', '0');
 
---
--- 表的结构 `ims_meepo_bbs_topic`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_topic` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_topic
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_topic`;
+CREATE TABLE `ims_meepo_bbs_topic` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) unsigned NOT NULL DEFAULT '0',
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
@@ -437,15 +533,116 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_topic` (
   KEY `uniacid` (`uniacid`) USING BTREE,
   KEY `uid` (`uid`) USING BTREE,
   KEY `tid` (`tid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_topic
+-- ----------------------------
 
---
--- 表的结构 `ims_meepo_bbs_topics`
---
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_topic_like
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_topic_like`;
+CREATE TABLE `ims_meepo_bbs_topic_like` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `openid` varchar(40) NOT NULL DEFAULT '',
+  `tid` int(11) unsigned NOT NULL DEFAULT '0',
+  `time` int(11) unsigned NOT NULL DEFAULT '0',
+  `num` int(11) unsigned NOT NULL DEFAULT '0',
+  `fid` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `tid` (`tid`) USING BTREE,
+  KEY `fid` (`fid`) USING BTREE,
+  KEY `openid` (`openid`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=497 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_topics` (
+-- ----------------------------
+-- Records of ims_meepo_bbs_topic_like
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_topic_like` VALUES ('496', '1', '917', '1472020096', '2', '0');
+
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_topic_read
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_topic_read`;
+CREATE TABLE `ims_meepo_bbs_topic_read` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `openid` varchar(40) NOT NULL DEFAULT '',
+  `time` int(11) unsigned NOT NULL DEFAULT '0',
+  `tid` int(11) unsigned NOT NULL DEFAULT '0',
+  `num` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `openid` (`openid`) USING BTREE,
+  KEY `tid` (`tid`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=17255 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of ims_meepo_bbs_topic_read
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17240', '1', '1472017432', '918', '1');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17241', '1', '1472017432', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17242', '1', '1472017466', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17243', '1', '1472020093', '917', '1');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17244', '1', '1472020094', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17245', '1', '1472020097', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17246', '1', '1472020139', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17247', '1', '1472020503', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17248', '1', '1472028646', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17249', '1', '1472029962', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17250', '1', '1472030171', '920', '1');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17251', '1', '1472030171', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17252', '1', '1472030267', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17253', '1', '1472032358', '0', '0');
+INSERT INTO `ims_meepo_bbs_topic_read` VALUES ('17254', '1', '1472032390', '0', '0');
+
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_topic_replie
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_topic_replie`;
+CREATE TABLE `ims_meepo_bbs_topic_replie` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `uid` int(11) unsigned NOT NULL DEFAULT '0',
+  `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
+  `content` text,
+  `create_at` int(11) unsigned NOT NULL DEFAULT '0',
+  `tid` int(11) unsigned NOT NULL DEFAULT '0',
+  `thumb` text NOT NULL,
+  `fid` int(11) unsigned NOT NULL DEFAULT '0',
+  `beggingid` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `uniacid` (`uniacid`) USING BTREE,
+  KEY `uid` (`uid`) USING BTREE,
+  KEY `tid` (`tid`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=427 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of ims_meepo_bbs_topic_replie
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_topic_share
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_topic_share`;
+CREATE TABLE `ims_meepo_bbs_topic_share` (
+  `id` int(11) NOT NULL,
+  `openid` varchar(40) NOT NULL DEFAULT '',
+  `time` int(11) unsigned NOT NULL DEFAULT '0',
+  `tid` int(11) unsigned NOT NULL DEFAULT '0',
+  `num` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `openid` (`openid`) USING BTREE,
+  KEY `tid` (`tid`) USING BTREE
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of ims_meepo_bbs_topic_share
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_topics
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_topics`;
+CREATE TABLE `ims_meepo_bbs_topics` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) unsigned NOT NULL DEFAULT '0',
   `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
@@ -468,90 +665,21 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_topics` (
   KEY `uniacid` (`uniacid`) USING BTREE,
   KEY `tid` (`tid`) USING BTREE,
   KEY `uid` (`uid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=917 ;
+) ENGINE=MyISAM AUTO_INCREMENT=921 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_topics
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_topics` VALUES ('917', '0', '1', '柳州日报', 'jing', '1472008107', '1472008107', '0', null, '0', '0', null, null, '288', '柳州日报柳州日报柳州日报', '0', '5', null);
+INSERT INTO `ims_meepo_bbs_topics` VALUES ('918', '1', '1', '新鲜事', 'top', '1472017424', '1472017424', '0', null, '0', '0', null, null, '289', '新鲜事新鲜事新鲜事[em_2]', '0', '4', null);
+INSERT INTO `ims_meepo_bbs_topics` VALUES ('919', '1', '1', '大爆料', 'new', '1472030066', '1472030066', '0', null, '0', '0', null, null, '293', '大爆料大爆料', '0', '0', null);
+INSERT INTO `ims_meepo_bbs_topics` VALUES ('920', '1', '1', '淡定', 'jing', '1472030163', '1472030163', '0', null, '0', '0', null, null, '289', '淡定淡定淡定淡定', '0', '3', null);
 
---
--- 表的结构 `ims_meepo_bbs_topic_like`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_topic_like` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `openid` varchar(40) NOT NULL DEFAULT '',
-  `tid` int(11) unsigned NOT NULL DEFAULT '0',
-  `time` int(11) unsigned NOT NULL DEFAULT '0',
-  `num` int(11) unsigned NOT NULL DEFAULT '0',
-  `fid` int(11) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `tid` (`tid`) USING BTREE,
-  KEY `fid` (`fid`) USING BTREE,
-  KEY `openid` (`openid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=496 ;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `ims_meepo_bbs_topic_read`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_topic_read` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `openid` varchar(40) NOT NULL DEFAULT '',
-  `time` int(11) unsigned NOT NULL DEFAULT '0',
-  `tid` int(11) unsigned NOT NULL DEFAULT '0',
-  `num` int(11) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `openid` (`openid`) USING BTREE,
-  KEY `tid` (`tid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17240 ;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `ims_meepo_bbs_topic_replie`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_topic_replie` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `uid` int(11) unsigned NOT NULL DEFAULT '0',
-  `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
-  `content` text,
-  `create_at` int(11) unsigned NOT NULL DEFAULT '0',
-  `tid` int(11) unsigned NOT NULL DEFAULT '0',
-  `thumb` text NOT NULL,
-  `fid` int(11) unsigned NOT NULL DEFAULT '0',
-  `beggingid` int(11) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `uniacid` (`uniacid`) USING BTREE,
-  KEY `uid` (`uid`) USING BTREE,
-  KEY `tid` (`tid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=427 ;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `ims_meepo_bbs_topic_share`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_topic_share` (
-  `id` int(11) NOT NULL,
-  `openid` varchar(40) NOT NULL DEFAULT '',
-  `time` int(11) unsigned NOT NULL DEFAULT '0',
-  `tid` int(11) unsigned NOT NULL DEFAULT '0',
-  `num` int(11) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `openid` (`openid`) USING BTREE,
-  KEY `tid` (`tid`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `ims_meepo_bbs_user`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_user` (
+-- ----------------------------
+-- Table structure for ims_meepo_bbs_user
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_bbs_user`;
+CREATE TABLE `ims_meepo_bbs_user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `openid` varchar(42) NOT NULL DEFAULT '',
   `time` int(11) unsigned NOT NULL DEFAULT '0',
@@ -564,36 +692,29 @@ CREATE TABLE IF NOT EXISTS `ims_meepo_bbs_user` (
   KEY `openid` (`openid`) USING BTREE,
   KEY `uid` (`uid`) USING BTREE,
   KEY `uniacid` (`uniacid`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1168 ;
+) ENGINE=MyISAM AUTO_INCREMENT=1169 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_bbs_user
+-- ----------------------------
+INSERT INTO `ims_meepo_bbs_user` VALUES ('1168', '1', '1472095339', '1', '127.0.0.1', '1', '1', '1');
 
---
--- 表的结构 `ims_meepo_module`
---
-
-CREATE TABLE IF NOT EXISTS `ims_meepo_module` (
+-- ----------------------------
+-- Table structure for ims_meepo_module
+-- ----------------------------
+DROP TABLE IF EXISTS `ims_meepo_module`;
+CREATE TABLE `ims_meepo_module` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `module` varchar(32) NOT NULL DEFAULT '',
   `set` text NOT NULL,
   `time` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of ims_meepo_module
+-- ----------------------------
 
---
--- 表的结构 `ims_moncom_neighbors`
---
-
-CREATE TABLE IF NOT EXISTS `ims_moncom_neighbors` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `weid` int(11) NOT NULL,
-  `nname` varchar(200) NOT NULL,
-  `banner_pic` varchar(200) NOT NULL,
-  `createtime` int(10) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 
 	]]></install>
