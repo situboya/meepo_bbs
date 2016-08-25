@@ -2,7 +2,6 @@
 global $_W,$_GPC;
 
 checkauth();
-die();
 $uid = $_W['member']['uid'];
 
 $sql = "SELECT id FROM ".tablename('meepo_sub_log')." WHERE fid = :fid limit 1";
