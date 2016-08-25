@@ -13,7 +13,6 @@ checkauth();
 	// //echo "<script>alert('请先登录');location.href='./index.php?i=1&c=auth&a=login'; </script>";
 	// message('请先登录', $url );
 }
-
 $setting = uni_setting($_W['uniacid'], 'creditbehaviors');
 $user['credit1_title'] = $setting['creditnames']['credit1']['title'];
 $user['credit2_title'] = $setting['creditnames']['credit2']['title'];
